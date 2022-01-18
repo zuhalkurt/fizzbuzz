@@ -2,34 +2,42 @@ function isDivisibleBy(n, m) {
     return n % m === 0;
 }
 
-for(let i = 1; i <= 255; i++) {
-   
-    let result = "";
-    
-    if (isDivisibleBy(i, 3) && i % 11 !== 0) {
-        result += "Fizz";
+function startsWithB(string) {
+    return string.startsWith("B");
+}
+
+for (let i = 1; i <= 300; i++) {
+    let result = [];
+
+    if (isDivisibleBy(i, 3)) {
+        result.push("Fizz");
     }
-    if( isDivisibleBy(i, 5) && i % 11 !== 0) {
-        result += "Buzz"
+    if (isDivisibleBy(i, 5)) {
+        result.push("Buzz");
     }
-    if(isDivisibleBy(i, 7) && i % 11 !== 0) {
-        result += "Bang";
+    if (isDivisibleBy(i, 7)) {
+        result.push("Bang");
     }
     if (isDivisibleBy(i, 11)) {
-        result += "Bong";
+        result = ["Bong"];
     }
     if (isDivisibleBy(i, 13)) {
-        result += "Fezz";
+        result.splice(
+            result.findIndex(startsWithB),
+            0,
+            "Fezz"
+        );
     }
     if (isDivisibleBy(i, 17)) {
-       result = result.split("").reverse().join("")
+        result.reverse();
     }
-    
-    if (result === ""){
-        result = i;
-    } 
-    
-    console.log(result);  
+
+    if (result.length === 0) {
+        result.push(i.toString());
+    }
+
+    console.log(result.join(""));
 }
+
 
 
