@@ -2,7 +2,7 @@ function isDivisibleBy(n, m) {
     return n % m === 0;
 }
 
-for(let i = 1; i <= 100; i++) {
+for(let i = 1; i <= 250; i++) {
    
     let result = "";
     
@@ -17,6 +17,9 @@ for(let i = 1; i <= 100; i++) {
     }
     if (isDivisibleBy(i, 11)) {
         result += "Bong";
+    }
+    if (isDivisibleBy(i, 13)) {
+        result += "Fezz";
     }
     if (result === ""){
         result = i;
