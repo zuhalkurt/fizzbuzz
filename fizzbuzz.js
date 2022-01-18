@@ -1,16 +1,19 @@
-for(let i = 1; i <= 100; i++) {
-    
-    if (i % 15 === 0) {
-        console.log("FizzBuzz")
-    }else if( i % 3 === 0) {
-        console.log("Fizz")
-    }else if (i % 5 === 0){
-        console.log("Buzz")
-    }
-    else{
-        console.log(i)
-    }
-
-    
+function isDivisibleBy(n, m) {
+    return n % m === 0;
 }
 
+for(let i = 1; i <= 100; i++) {
+    
+    let result = "";
+    
+    if (isDivisibleBy(i, 3)) {
+        result += "Fizz"
+    }
+    if( isDivisibleBy(i, 5)) {
+        result += "Buzz"
+    }
+    if (result === ""){
+        result = i;
+    } 
+    return result;
+}
