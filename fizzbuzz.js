@@ -3,7 +3,7 @@ function isDivisibleBy(n, m) {
 }
 
 for(let i = 1; i <= 100; i++) {
-    
+   
     let result = "";
     
     if (isDivisibleBy(i, 3)) {
@@ -12,8 +12,13 @@ for(let i = 1; i <= 100; i++) {
     if( isDivisibleBy(i, 5)) {
         result += "Buzz"
     }
+    if(isDivisibleBy(i, 7)) {
+        result += "Bang"
+    }
     if (result === ""){
         result = i;
     } 
-    return result;
+    console.log(result);  
 }
+
+
